@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>responsive data table example markup</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Andy Pillip" />
+
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+    <style>
+      table, thead, tfoot, tbody, tr, th, td {
+        display: block;
+      }
+
+      tr {
+        margin: .6em 0;
+      }
+
+      thead {
+        height: 0;
+        overflow: hidden;
+      }
+
+      td[title]:before {
+        display: block;
+        font-weight: bold;
+        content: attr(title);
+      }
+
+      @media (min-width: 50em) {/* assume our reset table fits in there */
+        table {
+          display: table;
+        }
+        thead {
+          display: table-header-group;
+        }
+        tfoot {
+          display: table-footer-group;
+        }
+        tbody {
+          display: table-row-group;
+        }
+        tr {
+          display: table-row;
+        }
+        td, th {
+          display: table-cell;
+        }
+        td[title]:before {
+          content: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Some examples of responsive data tables</h1>
+      <h2>That are possible with the Contao extension <em>Responsive Tables</em></h2>
+    </header>
+
+    <h3>The most simple table ever</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>year</th>
+          <th>age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td title="name">Andy</td>
+          <td title="year">1984</td>
+          <td title="age">28</td>
+        </tr>
+        <tr>
+          <td title="name">Simon</td>
+          <td title="year">1989</td>
+          <td title="age">24</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <p>
+        &copy; Copyright  by <a href="mailto:p@pvse.com">Andy Pillip</a>
+      </p>
+    </footer>
+  </body>
+</html>
