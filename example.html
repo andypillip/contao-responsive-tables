@@ -10,8 +10,52 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
     <style>
+      body {
+        margin: 0;
+        padding: 1em 5%;
+        font-family: sans-serif;
+        line-height: 1.4em;
+      }
+      
+      h1, h2, h3, caption, th {
+        font-family: serif;
+      }
+      
+      h1 {
+        font-size: 200%;
+        line-height: 1.4em;
+        margin: .7em 0;
+      }
+      
+      h2 {
+        font-size: 150%;
+        line-height: .9333333em;
+        margin: .9333333em 0;
+      }
+      
+      th[scope="row"] {
+        font-weight: bold;
+        margin: 1.4em 0 0;
+      }
+      
+      th[scope="rowgroup"] {
+        font-size: 120%;
+        line-height: 1.166667em;
+        margin: 1.166667em 0 0;
+      }
+      
+      p, table {
+        margin: .7em 0;
+      }
+      
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+    
       table, thead, tfoot, tbody, tr, th, td {
         display: block;
+        text-align: left;
       }
 
       tr {
@@ -25,6 +69,7 @@
 
       td[title]:before {
         display: block;
+        margin: .7em 0 0;
         font-weight: bold;
         content: attr(title);
       }
@@ -58,32 +103,79 @@
   <body>
     <header>
       <h1>Some examples of responsive data tables</h1>
-      <h2>That are possible with the Contao extension <em>Responsive Tables</em></h2>
+      <h2>These responsive layouts are possible with the Contao extension <em>Responsive Tables</em></h2>
+      <p>
+        Resize your browser window beyond the marker to see the responsive effect
+      </p>
     </header>
 
-    <h3>The most simple table ever</h3>
+    <section>
+      <h3>The most simple table ever</h3>
 
-    <table>
-      <thead>
-        <tr>
-          <th>name</th>
-          <th>year</th>
-          <th>age</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td title="name">Andy</td>
-          <td title="year">1984</td>
-          <td title="age">28</td>
-        </tr>
-        <tr>
-          <td title="name">Simon</td>
-          <td title="year">1989</td>
-          <td title="age">24</td>
-        </tr>
-      </tbody>
-    </table>
+      <table>
+        <thead>
+          <tr>
+            <th id="th-name">name</th>
+            <th id="th-year">year</th>
+            <th id="th-age">age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th headers="th-name" title="name" scope="row">Andy</th>
+            <td headers="th-year" title="year">1984</td>
+            <td headers="th-age" title="age">29</td>
+          </tr>
+          <tr>
+            <th headers="th-name" title="name" scope="row">Simon</th>
+            <td headers="th-year" title="year">1989</td>
+            <td headers="th-age" title="age">24</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h3>A simple table with sections</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th id="th1-name">name</th>
+            <th id="th1-year">year</th>
+            <th id="th1-age">age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="rowgroup" colspan="3">A</th>
+          </tr>
+          <tr>
+            <th headers="th1-name" scope="row" title="name">Andy</th>
+            <td headers="th1-year" title="year">1984</td>
+            <td headers="th1-age" title="age">28</td>
+          </tr>
+          <tr>
+            <th headers="th1-name" scope="row" title="name">August</th>
+            <td headers="th1-year" title="year">1977</td>
+            <td headers="th1-age" title="age">36</td>
+          </tr>
+          <tr>
+            <th scope="rowgroup" colspan="3">S</th>
+          </tr>
+          <tr>
+            <th headers="th1-name" scope="row"  title="name">Sepp</th>
+            <td headers="th1-year" title="year">1981</td>
+            <td headers="th1-age" title="age">32</td>
+          </tr>
+          <tr>
+            <th headers="th1-name" scope="row"  title="name">Simon</th>
+            <td headers="th1-year" title="year">1989</td>
+            <td headers="th1-age" title="age">24</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
     <footer>
       <p>
