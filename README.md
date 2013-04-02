@@ -1,43 +1,46 @@
 contao-responsive-tables
 ========================
 
-Enriching data tables in Contao with attributes so that you can linearize them for small screens like on mobile phones
+Enriching data tables in Contao with attributes so that you can linearize them for small screens like on mobile phones.
 
-## Making data tables readable on mobile phones
+Use still need to adjust your stylesheet, though.
+
+# Making data tables readable on mobile phones
 
 There are several approaches to format tables on small screens.
 
 I'm focussing on the easiest one here: Linearizing everything so that all cells stack on eachother in vertical.
 
-A properly structured data table has a _table header_ with _header cells_ that work as titles for the _data cells_ in the same column:
+A properly structured data table has a _table header_ with _header cells_ that work as titles for the _data cells_ in the same column. This is achievable with Contao's content element *table* by using the header option:
 
-> | *Name* | *Year of birth* | *Age* |
-> | Andy   | 1984            | 28    |
-> | Simon  | 1989            | 24    |
+Name   | Year   | Age
+-------|--------|----
+Andy   | 1984   | 28
+Simon  | 1989   | 24
 
 Linearizing this table would result in one stack of _header cells_ `th` on the top, followed by stacks of _data cells_ `td`:
 
-> *Name*
-> *Year of birth*
-> *Age*
-> 
-> Andy
-> 1984
+> **Name**  
+> **Year of birth**  
+> **Age**
+>
+> Andy  
+> 1984  
 > 28
 > 
-> Simon
-> 1989
-> 24
+> Simon  
+> 1989  
+> 24  
 
 Since not all data explains itself without a header (or title), one solution is to hide the header and add the title to each _data cell_, which makes reading the data sets possible again:
 
-> *Name* Andy
-> *Year* 1984
-> *Age* 28
+> **Name** Andy  
+> **Year** 1984  
+> **Age** 28
 > 
-> *Name* Simon
-> *Year* 1989
-> *Age* 24 
+> **Name** Simon  
+> **Year** 1989  
+> **Age** 24 
 
 ## How it works
 
@@ -68,7 +71,7 @@ Using progressive enhancement, the basic CSS could look something like this:
       overflow: hidden;
     }
     
-    /* show title attribute above each data cell */
+    /* show the title attribute above each data cell */
     td[title]:before {
       display: block;
       font-weight: bold;
