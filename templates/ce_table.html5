@@ -28,7 +28,7 @@
 <?php foreach ($this->body as $class => $row): ?>
 <tr class="<?php echo $class; ?>">
 <?php foreach ($row as $i => $col): ?>
-<?php if ($i == 0 && $this->useLeftTh): ?><th scope="row"<?php else: ?><td<?php endif; ?> <?php if($this->useHeader): ?>headers="<?php echo $this->id; ?>-<?php echo $i; ?>" title="<?php echo $this->header[$i]["content"]; ?>"<?php endif; ?> class="<?php echo $col['class']; ?>"><?php echo $col['content']; ?><?php if ($this->useLeftTh): ?></th><?php else: ?></td><?php endif; ?>
+<?php if ($i == 0 && $this->useLeftTh): ?><th scope="row"<?php else: ?><td<?php endif; ?> <?php if($this->useHeader): ?>headers="<?php echo $this->id; ?>-<?php echo $i; ?>" data-header="<?php echo $this->header[$i]["content"]; ?>"<?php endif; ?> class="<?php echo $col['class']; ?>"><?php echo $col['content']; ?><?php if ($this->useLeftTh): ?></th><?php else: ?></td><?php endif; ?>
 <?php endforeach; ?>
 </tr>
 <?php endforeach; ?>

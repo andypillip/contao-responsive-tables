@@ -67,11 +67,11 @@
         overflow: hidden;
       }
 
-      td[title]:before {
+      td[data-header]:before {
         display: block;
         margin: .7em 0 0;
         font-weight: bold;
-        content: attr(title);
+        content: attr(data-header);
       }
 
       @media (min-width: 50em) {/* assume our reset table fits in there */
@@ -93,7 +93,7 @@
         td, th {
           display: table-cell;
         }
-        td[title]:before {
+        td[data-header]:before {
           content: none;
         }
       }
@@ -125,14 +125,14 @@
         </thead>
         <tbody>
           <tr>
-            <th headers="th-name" title="name" scope="row">Andy</th>
-            <td headers="th-year" title="year">1984</td>
-            <td headers="th-age" title="age">29</td>
+            <th headers="th-name" data-header="name" scope="row">Andy</th>
+            <td headers="th-year" data-header="year">1984</td>
+            <td headers="th-age" data-header="age">29</td>
           </tr>
           <tr>
-            <th headers="th-name" title="name" scope="row">Simon</th>
-            <td headers="th-year" title="year">1989</td>
-            <td headers="th-age" title="age">24</td>
+            <th headers="th-name" data-header="name" scope="row">Simon</th>
+            <td headers="th-year" data-header="year">1989</td>
+            <td headers="th-age" data-header="age">24</td>
           </tr>
         </tbody>
       </table>

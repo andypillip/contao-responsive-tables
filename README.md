@@ -44,9 +44,9 @@ Since not all data explains itself without a header (or title), one solution is 
 
 ## How it works
 
-This extension looks for a corresponding _header cell_ for each _data cell_ and adds an `title`-attribute to each.
+This extension looks for a corresponding _header cell_ for each _data cell_ and adds an `title`-attribute (`data-header` in HTML 5) to each.
 
-Using _CSS pseudo elements_, you can add those attributes above each cell:
+Using _CSS pseudo elements_, you can add those attributes above each cell (use `data-header` instead of `title` for HTML 5):
 
     td[title]:before {
       display: block;
