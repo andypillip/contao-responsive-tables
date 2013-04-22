@@ -9,7 +9,9 @@ Use still need to adjust your stylesheet, though.
 
 There are several approaches to format tables on small screens.
 
-![](responsive-data-table.png) I'm focussing on the easiest one here: Linearizing everything so that all cells stack on eachother in vertical.
+I'm focussing on the easiest one here: Linearizing everything so that all cells stack on eachother in vertical.
+
+![](responsive-data-table.png)
 
 A properly structured data table has a _table header_ with _header cells_ that work as titles for the _data cells_ in the same column. This is achievable with Contao's content element *table* by using the header option:
 
