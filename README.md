@@ -93,3 +93,20 @@ Using progressive enhancement, the basic CSS could look something like this:
 Since there are some serious issues with table formatting in IE <= 8, you should avoid formatting tablets at all and keep the browsers's default rules.
 
 IE <= 8 is used mainly on the desktop, so either work with `max-width` mediaqueries to linearize the table, or hide the table-stylesheet to this browser.
+
+## Licence
+
+Copyright (C) 2013  Andy Pillip
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
